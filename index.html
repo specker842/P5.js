@@ -62,5 +62,15 @@
 
   </main>
 
+  <script>
+    function resizeApp() {
+      const cellWidth = document.querySelector('.cell').getBoundingClientRect().width;
+      const scale = cellWidth / 600;
+      document.documentElement.style.setProperty('--dynamic-scale', scale);
+    }
+    window.addEventListener('resize', resizeApp);
+    window.addEventListener('DOMContentLoaded', resizeApp);
+  </script>
+  
 </body>
 </html>
