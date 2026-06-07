@@ -1,0 +1,163 @@
+function setup() {
+  createCanvas(600, 400);
+  
+  
+}
+
+function draw() {
+  background("#a7e7ff");
+  /*얼굴+목*/
+  fill('#ffecd9');
+  rect(240,100,120,300);
+  beginShape();
+  vertex(200,100);
+  vertex(200,160);
+  bezierVertex(200,300,400,300,400,160);
+  vertex(400,100);
+  endShape(CLOSE);
+  /*눈썹*/
+  strokeWeight(7);
+  curve(220,160,220,140,285,140,285,160);
+  curve(315,160,315,140,380,140,380,160);
+  /*눈*/
+  if (mouseIsPressed === true) {
+      strokeWeight(7);
+      curve(220,190,230,160,275,160,285,190);
+      curve(315,190,325,160,370,160,380,190);
+  }
+  else {
+      stroke(0);
+      strokeWeight(1);
+      fill(255);
+      beginShape();
+      vertex(230,150);
+      bezierVertex(230,140,280,140,275,160);
+      vertex(275,160);
+      bezierVertex(275,170,230,170,230,150);
+      endShape(CLOSE);
+      beginShape();
+      vertex(325,160);
+      bezierVertex(325,140,375,140,370,150);
+      vertex(370,150);
+      bezierVertex(370,170,325,170,325,160);
+      endShape(CLOSE);
+      fill(0);
+      circle(255,155,20);
+      circle(345,155,20);
+  }
+  /*코*/
+  strokeWeight(3);
+  noFill();
+  beginShape();
+  vertex(285,160);
+  bezierVertex(283,160,280,190,283,190);
+  bezierVertex(283,200,320,200,320,190);
+  bezierVertex(323,190,317,160,315,160);
+  vertex(315,160);
+  endShape();
+  /*입*/
+  strokeWeight(1);
+  fill('#e28f8f');
+  beginShape();
+  vertex(280,230);
+  bezierVertex(280,250,320,250,320,230);
+  vertex(320,230);
+  vertex(305,220);
+  vertex(300,225);
+  vertex(295,220);
+  endShape(CLOSE);
+  line(280,230,320,230);
+  /*모자*/
+  strokeWeight(1);
+  stroke(0);
+  fill('#20460d');
+  beginShape();
+  vertex(400,70);
+  bezierVertex(400,10,200,10,200,70);
+  vertex(200,120);
+  vertex(400,120);
+  endShape(CLOSE);
+  /*모자챙*/
+  fill('#335323');
+  beginShape();
+  vertex(190,160);
+  bezierVertex(200,120,400,120,410,160);
+  vertex(400,120);
+  bezierVertex(400,80,200,80,200,120);
+  endShape(CLOSE);
+  /*약장*/
+  rect(280,40,40,30);
+  strokeWeight(5);
+  line(290,45,310,45);
+  line(290,52,310,52);
+  line(290,59,310,59);
+  line(290,66,310,66);
+  /*옷*/
+  strokeWeight(1);
+  stroke(0);
+  fill('#20460d');
+  beginShape();
+  vertex(80,400);
+  vertex(100,300);
+  vertex(220,280);
+  vertex(240,280);
+  vertex(300,320);
+  vertex(360,280);
+  vertex(380,280);
+  vertex(500,300);
+  vertex(520,400);
+  endShape(CLOSE);
+
+  if (keyIsPressed === true)
+    {
+      if (key === ' ')
+        {
+          fill('#f5dbc1');
+          beginShape();
+          vertex(415,219);
+          vertex(385,139);
+          bezierVertex(385,131,393,131,395,136);
+          vertex(430,219);
+          endShape(CLOSE);
+          beginShape();
+          vertex(405,220);
+          vertex(390,180);
+          bezierVertex(391,170,398,170,400,175);
+          vertex(435,215);
+          endShape(CLOSE);
+          for(let x=1;x<3;x++)
+            {
+              beginShape();
+              vertex(415+x*8,219-x*1);
+              vertex(385+x*8,139+x*2);
+              bezierVertex(385+x*8,131+x*2,393+x*8,131+x*2,395+x*8,136+x*2);
+              vertex(430+x*8,219-x*1);
+              endShape(CLOSE);
+            }
+          fill('#f7e0c9');
+          beginShape();
+          vertex(435,217);
+          vertex(406,153);
+          bezierVertex(406,145,414,148,416,150);
+          bezierVertex(435,170,455,190,450,215);
+          endShape(CLOSE);
+          fill('#2b5c13');
+          beginShape();
+          vertex(460,400);
+          vertex(400,220);
+          vertex(450,200);
+          vertex(560,400);
+          endShape(CLOSE);
+          fill(256);
+          strokeWeight(2);
+          textSize(35);
+          text('단결~',470,170);
+        }
+    }
+  
+  fill(256);
+  strokeWeight(2);
+  textSize(15);
+  text('마우스 클릭은 경례, 스페이스바는 웃음을 짓습니다.',20,220,200,150);
+  
+}
