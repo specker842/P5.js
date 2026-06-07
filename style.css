@@ -54,7 +54,7 @@ h2 {
   grid-template-columns: 1fr 1fr;
   width: 100%;
   max-width: 940px;
-  gap: 30px;
+  gap: 40px;
   padding: 20px;
 }
 
@@ -76,7 +76,7 @@ h2 {
 
 .iframe-wrap {
   width: 100%;
-  height: calc(600px * var(--dynamic-scale, 0.75) * 400 / 600);
+  height: var(--dynamic-height, 300px); 
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid #333333;
@@ -90,7 +90,7 @@ h2 {
   height: 400px;
   border: none;
   transform-origin: top left;
-  transform: scale(var(--dynamic-scale, 0.75));
+  transform: scale(var(--dynamic-scale, 0.75)); 
 }
 
 #projects .cell .info {
