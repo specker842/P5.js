@@ -76,29 +76,10 @@ h2 {
 
 .iframe-wrap {
   width: 100%;
-  height: 300px;
+  height: calc(600px * var(--dynamic-scale, 0.75) * 400 / 600);
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid #333333;
-}
-
-@media (max-width: 950px) {
-  .iframe-wrap {
-    height: 200px; 
-  }
-  
-  .iframe-wrap iframe {
-    transform: scale(0.5); 
-  }
-}
-
-@media (max-width: 600px) {
-  .iframe-wrap {
-    height: 140px; 
-  }
-  .iframe-wrap iframe {
-    transform: scale(0.35); 
-  }
 }
 
 .iframe-wrap iframe {
@@ -109,7 +90,7 @@ h2 {
   height: 400px;
   border: none;
   transform-origin: top left;
-  transform: scale(0.75);
+  transform: scale(var(--dynamic-scale, 0.75));
 }
 
 #projects .cell .info {
