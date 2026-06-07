@@ -96,6 +96,10 @@ h2 {
   .iframe-wrap {
     height: 140px; 
   }
+  .iframe-wrap iframe {
+    transform: scale(0.35); 
+  }
+}
 
 .iframe-wrap iframe {
   position: absolute;
