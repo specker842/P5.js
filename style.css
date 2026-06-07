@@ -18,9 +18,6 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-
-  --cell-width: min(450px, 43vw);
-  --js-scale: calc(var(--cell-width) / 600);
 }
 
 header {
@@ -62,7 +59,7 @@ h2 {
 }
 
 #projects .cell {
-  width: var(--cell-width);
+  width: 100%;
   height: auto; 
   background: #fdfcef;
   border-radius: 12px;
@@ -79,11 +76,26 @@ h2 {
 
 .iframe-wrap {
   width: 100%;
-  height: calc(var(--cell-width) * 400 / 600);
+  height: 300px;
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid #333333;
 }
+
+@media (max-width: 950px) {
+  .iframe-wrap {
+    height: 200px; 
+  }
+  
+  .iframe-wrap iframe {
+    transform: scale(0.5); 
+  }
+}
+
+@media (max-width: 600px) {
+  .iframe-wrap {
+    height: 140px; 
+  }
 
 .iframe-wrap iframe {
   position: absolute;
@@ -93,7 +105,7 @@ h2 {
   height: 400px;
   border: none;
   transform-origin: top left;
-  transform: scale(var(--js-scale));
+  transform: scale(0.75);
 }
 
 #projects .cell .info {
