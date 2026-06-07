@@ -33,8 +33,7 @@
       </div>
       <div class="info">
         <h3>과제 3 : Animated Me</h3>
-        <p>과제 2의 연장선으로 마우스 클릭과 스페이스 바로</p> 
-        <p>군인에 걸맞는 인터랙션을 보여주게 제작하였습니다.</p>
+        <p>과제 2의 연장선으로 마우스 클릭과 스페이스 바로 군인에 걸맞는 인터랙션을 보여주게 제작하였습니다.</p>
       </div>
     </div>
 
@@ -44,8 +43,7 @@
       </div>
       <div class="info">
         <h3>과제 2 : Me</h3>
-        <p>자신의 캐리커처를 표현하는 과제로</p>
-        <p>군인 신분의 저를 제작하였습니다.</p>
+        <p>자신의 캐리커처를 표현하는 과제로 군인 신분의 저를 제작하였습니다.</p>
       </div>
     </div>
 
@@ -55,8 +53,7 @@
       </div>
       <div class="info">
         <h3>과제 4 : Bel-Air Highway Animated</h3>
-        <p>과제 1에서 멈춰있던 도형들을 움직임으로써</p>
-        <p>공간감을 나타내었습니다.</p>
+        <p>과제 1에서 멈춰있던 도형들을 움직임으로써 공간감을 나타내었습니다.</p>
       </div>
     </div>
 
@@ -64,13 +61,18 @@
 
   <script>
     function resizeApp() {
-      const cellWidth = document.querySelector('.cell').getBoundingClientRect().width;
+      const cell = document.querySelector('.cell');
+      if (!cell) return;
+      const cellWidth = cell.getBoundingClientRect().width;
       const scale = cellWidth / 600;
+      const currentHeight = 400 * scale;
+
       document.documentElement.style.setProperty('--dynamic-scale', scale);
+      document.documentElement.style.setProperty('--dynamic-height', currentHeight + 'px');
     }
     window.addEventListener('resize', resizeApp);
     window.addEventListener('DOMContentLoaded', resizeApp);
   </script>
-  
+
 </body>
 </html>
